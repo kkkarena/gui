@@ -81,7 +81,8 @@
           </label>
           <div id="cid_3" class="form-input">
             <select class="form-dropdown" style="width:150px" id="q1_chipsetCompany" name="q1_chipsetCompany" onchange="addModel(this)">
-              <option selected="selected" value="BCM"> Broadcom </option>
+              <option selected="selected" value="Please Select"> (Please Select) </option>
+              <option value="BCM"> Broadcom </option>
               <option value="TI"> Intel</option>
             </select>
           </div>
@@ -93,7 +94,7 @@
           <div id="cid_24" class="form-input">
             <select class="form-dropdown" style="width:150px" id="q2_customer" name="q2_customer">
               <option selected="selected" value="Charter"> Charter </option>
-              <option value="TWC_Genie"> TWC Genie</option>
+              <option value="TWC_Genie"> TWC_Genie</option>
             </select>
           </div>
         </li>
@@ -357,10 +358,8 @@
       <li class="form-line" id="id_36">
         <label class="form-label-left" id="label_36" for="input_36"> H/W Interfaces check </label>
         <div id="cid_36" class="form-input">
-          <div class="form-single-column"><span class="form-checkbox-item" style="clear:left;">
-            <input type="checkbox" class="form-checkbox" id="Switch_RF_Lock_MIB" name="q36_hwInterfaces[]" value="Coax. Cable - Frequency Locking check" />
-              <label for="input_36_0"> Coax. Cable - Frequency Locking check </label></span><span class="clearfix"></span><span class="form-checkbox-item" style="clear:left;">
-              <input type="checkbox" class="form-checkbox" id="Switch_Wireless_Test" name="q36_hwInterfaces[]" value="802.11 (Wireless)" />
+          <div class="form-single-column"><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_RF_Lock_MIB" name="q36_hwInterfaces[]" value="Coax. Cable - Frequency Locking check" />
+              <label for="input_36_0"> Coax. Cable - Frequency Locking check </label></span><span class="clearfix"></span><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_Wireless_Test" name="q36_hwInterfaces[]" value="802.11 (Wireless)" />
               <label for="input_36_1"> 802.11 (Wireless) </label></span><span class="clearfix"></span>
           </div>
         </div>
@@ -368,11 +367,8 @@
       <li class="form-line" id="id_37">
         <label class="form-label-left" id="label_37" for="input_37"> SNMP Test </label>
         <div id="cid_37" class="form-input">
-          <div class="form-single-column"><span class="form-checkbox-item" style="clear:left;">
-            <input type="checkbox" class="form-checkbox" id="Switch_SNMP_Agent_CM" name="q37_snmpTest[]" value="CM SNMP Agent" />
-              <label for="input_37_0"> CM SNMP Agent </label></span><span class="clearfix"></span><span class="form-checkbox-item" style="clear:left;">
-              <input type="checkbox" class="form-checkbox" id="Switch_SNMP_Agent_EMTA" name="q37_snmpTest[]" value="CM SNMP Agent" />
-              <label for="input_37_1"> CM SNMP Agent - EMTA </label></span><span class="clearfix"></span>
+          <div class="form-single-column"><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_SNMP_Agent_CM" name="q37_snmpTest[]" value="CM SNMP Agent" />
+              <label for="input_37_0"> CM SNMP Agent </label></span><span class="clearfix"></span>
           </div>
         </div>
       </li>

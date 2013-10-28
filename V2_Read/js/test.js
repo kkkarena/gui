@@ -23,11 +23,14 @@ function addModel(theselect){
 		//*BRCM customer (EX: Charter, TWC .etc) 
 		var BRCM_customer = new Array();
 		BRCM_customer[0] = "Charter" ;
-		BRCM_customer[1] = "TWC Genie" ;
+		BRCM_customer[1] = "TWC_Genie" ;
+		BRCM_customer[2] = "Cox" ;
 		//*BRCM_model
 		var BRCM_model = new Array();
 		BRCM_model[0] = "CG3000D-RG";
 		BRCM_model[1] = "CG3000Dv2";
+		BRCM_model[2] = "CG4500BX";
+
 		//*TI customer (EX: Virgin, ONO .etc) 
 		var TI_customer = new Array();
 		TI_customer[0] = "Virgin" ;
@@ -100,7 +103,6 @@ function runAllorNot(theselect) {
 		document.getElementById('Switch_RF_Lock_MIB').checked = boolValue;								//Switch_RF_Lock_MIB
 		document.getElementById('Switch_Wireless_Test').checked = boolValue;							//Switch_Wireless_Test
 		document.getElementById('Switch_SNMP_Agent_CM').checked = boolValue;							//Switch_SNMP_Agent_CM
-		document.getElementById('Switch_SNMP_Agent_EMTA').checked = boolValue;							//Switch_SNMP_Agent_EMTA
 		document.getElementById('Switch_Web_Surf_GUI').checked = boolValue;								//Switch_Web_Surf_GUI
 		document.getElementById('Switch_SortSite').checked = boolValue;										//Switch_SortSite
 		document.getElementById('Switch_Router_Function').selectedIndex  = (getDropedBoxId('run_all_or_not')); //Switch_Router_Function
@@ -126,6 +128,9 @@ function checkUserInput(){
 		} else {
 			createFile();
 		}
+	} else if (document.getElementById('q1_chipsetCompany').value == 'Please Select') {
+		alert("ChipSet Comany cannot be empty! ");
+
 	} else {createFile();}
 
 }
@@ -184,7 +189,6 @@ function createFile() {
 		fs3.WriteLine('Switch_RF_Lock_MIB=>'+Number(document.getElementById('Switch_RF_Lock_MIB').checked));								//Switch_RF_Lock_MIB
 		fs3.WriteLine('Switch_Wireless_Test=>'+Number(document.getElementById('Switch_Wireless_Test').checked));							//Switch_Wireless_Test
 		fs3.WriteLine('Switch_SNMP_Agent_CM=>'+Number(document.getElementById('Switch_SNMP_Agent_CM').checked));							//Switch_SNMP_Agent_CM
-		fs3.WriteLine('Switch_SNMP_Agent_EMTA=>'+Number(document.getElementById('Switch_SNMP_Agent_EMTA').checked));						//Switch_SNMP_Agent_EMTA
 		fs3.WriteLine('Switch_Web_Surf_GUI=>'+Number(document.getElementById('Switch_Web_Surf_GUI').checked));								//Switch_Web_Surf_GUI
 		fs3.WriteLine('Switch_SortSite=>'+Number(document.getElementById('Switch_SortSite').checked));										//Switch_SortSite
 		fs3.WriteLine('Switch_Router_Function=>'+getDropedBoxId('Switch_Router_Function'));													//Switch_Router_Function
@@ -206,18 +210,5 @@ function createFile() {
 		window.open('','_self','');      //close Window w/o message
 		window.close();
 }
-
-function Read(){
-var Scr  = new ActiveXObject("Scripting.FileSystemObject");
-var CTF  = Scr .OpenTextFile("C:\\Gyan.txt", 1, true);
-data = CTF .ReadAll(); 
-alert(data);
-CTF .Close();
-}
-</script>
-</head>
-<body onLoad="Read()">
-</body>
-</html>
 
 
