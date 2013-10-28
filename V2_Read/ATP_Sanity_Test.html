@@ -1,0 +1,451 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="HandheldFriendly" content="true" />
+<title>Automation Sanity Test</title>
+<link type="text/css" rel="stylesheet" href="css/styles/form.css"/>
+<link href="css/calendarview.css" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="css/styles/nova.css"/>
+<link type="text/css" media="print" rel="stylesheet" href="http://cdn.jotfor.ms/css/printForm.css?3.1.1258" />
+<style type="text/css">
+    .form-label{
+        width:220px !important;
+    }
+    .form-label-left{
+        width:220px !important;
+    }
+    .form-line{
+        padding-top:12px;
+        padding-bottom:12px;
+    }
+    .form-label-right{
+        width:220px !important;
+    }
+    .form-all{
+        width:750px;
+        color:#555 !important;
+        font-family:'Tahoma';
+        font-size:13px;
+    }
+    .form-radio-item label, .form-checkbox-item label, .form-grading-label, .form-header{
+        color:#0B0724;
+    }
+
+</style>
+
+<script src="js/prototype.js?v=3.1.1258" type="text/javascript"></script>
+<script src="js/protoplus.js?v=3.1.1258" type="text/javascript"></script>
+<script src="js/protoplus-ui.js?v=3.1.1258" type="text/javascript"></script>
+<script src="js/jotform.js?v=3.1.1258" type="text/javascript"></script>
+<script src="js/calendarview.js?v=3.1.1258" type="text/javascript"></script>
+<script type="text/javascript">
+   JotForm.setConditions([{"action":[{"field":"7","visibility":"Show"},{"field":"8","visibility":"Show"}],"index":"0","link":"Any","priority":"0","terms":[{"field":"6","operator":"equals","value":"Yes"}],"type":"field"}]);
+   JotForm.init(function(){
+      JotForm.description('input_22', '(EX: V1.23.02)');
+      JotForm.description('input_9', '目前待測Firmware版本');
+      JotForm.description('label_51', 'Remote Upgrade Test必填');
+      JotForm.description('label_50', 'Remote Upgrade Test必填');
+      JotForm.description('label_49', 'Remote Upgrade Test必填');
+      JotForm.description('label_10', 'Remote Upgrade Test必填');
+      JotForm.description('label_9', 'Remote Upgrade Test必填');   
+   });
+
+</script>
+<script src="js/test.js" type="text/javascript"></script>
+</head>
+
+<body>
+<form class="jotform-form" method="post" enctype="multipart/form-data" name="form_32135170023842" id="32135170023842" accept-charset="utf-8">
+  <input type="hidden" name="formID" value="32135170023842" />
+  <div class="form-all">
+    <ul class="form-section">
+      <li id="cid_1" class="form-input-wide">
+        <div class="form-header-group">
+          <h2 id="header_1" class="form-header">
+            Automation Sanity Test
+          </h2>
+          <div id="subHeader_1" class="form-subHeader">
+            2013 July
+          </div>
+        </div>
+      </li>
+      <ul class="form-section" id="section_29">
+        <li id="cid_29" class="form-input-wide">
+          <div class="form-collapse-table" id="collapse_29"><span class="form-collapse-mid" id="collapse-text_29">DUT settings</span><span class="form-collapse-right form-collapse-right-show">&nbsp;</span>
+          </div>
+        </li>
+        <li class="form-line" id="id_3">
+          <label class="form-label-left" id="label_3" for="input_3">
+            Chipset Company<span class="form-required">*</span>
+          </label>
+          <div id="cid_3" class="form-input">
+            <select class="form-dropdown" style="width:150px" id="q1_chipsetCompany" name="q1_chipsetCompany" onchange="addModel(this)">
+              <option selected="selected" value="BCM"> Broadcom </option>
+              <option value="TI"> Intel</option>
+            </select>
+          </div>
+        </li>
+        <li class="form-line" id="id_24">
+          <label class="form-label-left" id="label_24" for="input_24">
+            Customer<span class="form-required">*</span>
+          </label>
+          <div id="cid_24" class="form-input">
+            <select class="form-dropdown" style="width:150px" id="q2_customer" name="q2_customer">
+              <option selected="selected" value="Charter"> Charter </option>
+              <option value="TWC_Genie"> TWC Genie</option>
+            </select>
+          </div>
+        </li>
+        <li class="form-line" id="id_21">
+          <label class="form-label-left" id="label_21" for="input_21">
+            Model<span class="form-required">*</span>
+          </label>
+          <div id="cid_21" class="form-input">
+            <select class="form-dropdown" style="width:150px" id="q3_model" name="q3_model">
+              <option selected="selected" value="CG3000D-RG"> CG3000D-RG </option>
+              <option value="CG3000Dv2"> CG3000Dv2 </option>
+            </select> 
+          </div>
+        </li>
+      </ul>
+
+      <!--BackDoor_Pre-->
+      <ul class="form-section" id="section_48">
+        <li id="cid_48" class="form-input-wide">
+          <div class="form-collapse-table" id="collapse_48"><span class="form-collapse-mid" id="collapse-text_48">Backdoor Settings - Previous Version</span><span class="form-collapse-right form-collapse-right-show">&nbsp;</span>
+          </div>
+        </li>
+        <li class="form-line" id="id_51">
+          <label class="form-label-left" id="label_51" for="input_51"> Boot Loader file </label>
+          <div id="cid_51" class="form-input">
+            <input class="form-upload" type="file" id="Backdoor_Previous_Bootloader" name="q51_bootLoader" file-accept="pdf, doc, docx, xls, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif" file-maxsize="1024" />
+          </div>
+        </li>
+        <li class="form-line" id="id_50">
+          <label class="form-label-left" id="label_50" for="input_50"> Unsigned Previous image file </label>
+          <div id="cid_50" class="form-input">
+            <input class="form-upload" type="file" id="Backdoor_Previous_Image_File" name="q50_unsignedPrevious" file-accept="pdf, doc, docx, xls, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif" file-maxsize="1024" />
+          </div>
+        </li>     
+        <li class="form-line" id="id_52">
+          <label class="form-label-left" id="label_52" for="input_52"> Linux Kernel image file </label>
+          <div id="cid_52" class="form-input">
+            <input class="form-upload" type="file" id="Backdoor_Previous_Linux_Kernel" name="q52_linuxKernel" file-accept="pdf, doc, docx, xls, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif" file-maxsize="1024" />
+          </div>
+        </li>
+        <li class="form-line" id="id_53">
+          <label class="form-label-left" id="label_53" for="input_53"> Linux File System file </label>
+          <div id="cid_53" class="form-input">
+            <input class="form-upload" type="file" id="Backdoor_Previous_Linux_FS_File" name="q53_fileSystem" file-accept="pdf, doc, docx, xls, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif" file-maxsize="1024" />
+          </div>
+        </li>
+        <div id="TI_Backdoor_PreWireless_driver" style="display:none">
+        <li class="form-line" id="id_54">
+          <label class="form-label-left" id="label_54" for="input_54"> Wireless Driver file </label>
+          <div id="cid_54" class="form-input">
+            <input class="form-upload" type="file" id="Backdoor_Previous_Wireless_Driver" name="q54_wirelessDriver54" file-accept="pdf, doc, docx, xls, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif" file-maxsize="1024" />
+          </div>
+        </li>
+        <div>
+      </ul>
+
+      <!--BackDoor_Current-->
+      <ul class="form-section" id="section_56">
+        <li id="cid_56" class="form-input-wide">
+          <div class="form-collapse-table" id="collapse_56"><span class="form-collapse-mid" id="collapse-text_56">Backdoor Settings - Current Version</span><span class="form-collapse-right form-collapse-right-show">&nbsp;</span>
+          </div>
+        </li>
+        <li class="form-line" id="id_57">
+          <label class="form-label-left" id="label_57" for="input_57"> Boot Loader file </label>
+          <div id="cid_57" class="form-input">
+            <input class="form-upload" type="file" id="Backdoor_Current_Bootloader" name="q57_bootLoader57" file-accept="pdf, doc, docx, xls, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif" file-maxsize="1024" />
+          </div>
+        </li>
+        <li class="form-line" id="id_49">
+          <label class="form-label-left" id="label_49" for="input_49"> Unsigned Current image file </label>
+          <div id="cid_49" class="form-input">
+            <input class="form-upload" type="file" id="Backdoor_Current_Image_File" name="q49_unsignedCurrent" file-accept="pdf, doc, docx, xls, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif" file-maxsize="1024" />
+          </div>
+        </li>
+        <li class="form-line" id="id_58">
+          <label class="form-label-left" id="label_58" for="input_58"> Linux Kernel image file </label>
+          <div id="cid_58" class="form-input">
+            <input class="form-upload" type="file" id="Backdoor_Current_Linux_Kernel" name="q58_linuxKernel58" file-accept="pdf, doc, docx, xls, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif" file-maxsize="1024" />
+          </div>
+        </li>
+        <li class="form-line" id="id_59">
+          <label class="form-label-left" id="label_59" for="input_59"> Linux File System file </label>
+          <div id="cid_59" class="form-input">
+            <input class="form-upload" type="file" id="Backdoor_Current_Linux_FS_File" name="q59_fileSystem59" file-accept="pdf, doc, docx, xls, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif" file-maxsize="1024" />
+          </div>
+        </li>
+        <div id="TI_Backdoor_CurWireless_driver" style="display:none">
+        <li class="form-line" id="id_60">
+          <label class="form-label-left" id="label_60" for="input_60"> Wireless Driver file </label>
+          <div id="cid_60" class="form-input">
+            <input class="form-upload" type="file" id="Backdoor_Current_Wireless_Driver" name="q60_wirelessDriver60" file-accept="pdf, doc, docx, xls, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif" file-maxsize="1024" />
+          </div>
+        </li>
+      </ul>
+      <ul class="form-section" id="section_11">
+        <li id="cid_11" class="form-input-wide">
+          <div class="form-collapse-table" id="collapse_11"><span class="form-collapse-mid" id="collapse-text_11">SW Settings</span><span class="form-collapse-right form-collapse-right-show">&nbsp;</span>
+          </div>
+        </li>
+        <li class="form-line" id="id_22">
+          <label class="form-label-left" id="label_22" for="input_22"> SW Version <span class="form-required">*</span></label>
+          <div id="cid_22" class="form-input">
+            <input type="text" class=" form-textbox" data-type="input-textbox" id="q4_swVersion" name="q4_swVersion" size="20" />
+          </div>
+        </li>
+        <li class="form-line" id="id_10">
+          <label class="form-label-left" id="label_10" for="input_10"> SIGNED Previous version image </label>
+          <div id="cid_10" class="form-input">
+            <input class="form-upload" type="file" id="Source_Previous_Image_Path" name="q10_previousVersion10" file-accept="pdf, doc, docx, xls, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif" file-maxsize="10240" />
+          </div>
+        </li>        
+        <li class="form-line" id="id_9">
+          <label class="form-label-left" id="label_9" for="input_9"> SIGNED Current version image </label>
+          <div id="cid_9" class="form-input">
+            <input class="form-upload" type="file" id="Source_Current_Image_Path" name="q9_currentVersion" file-accept="pdf, doc, docx, xls, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif" file-maxsize="10240" />
+          </div>
+        </li>
+      </ul>
+
+      <ul class="form-section" id="section_12">
+        <li id="cid_12" class="form-input-wide">
+          <div class="form-collapse-table" id="collapse_12"><span class="form-collapse-mid" id="collapse-text_12">Test Environment Setup</span><span class="form-collapse-right form-collapse-right-show">&nbsp;</span>
+          </div>
+        </li>
+        <li class="form-line" id="id_4">
+          <label class="form-label-left" id="label_4" for="input_4">
+            Locked Frequency<span class="form-required">*</span>
+          </label>
+          <div id="cid_4" class="form-input">
+            <select class="form-dropdown" style="width:150px" id="q7_lockedFrequency" name="q7_lockedFrequency">
+              <option value="">  </option>
+              <option value="234"> 234 - NA</option>
+              <option value="303"> 303 - NA</option>
+              <option value="404"> 404 - EU</option>
+              <option value="520"> 520 - EU</option>
+              <option value="585"> 585 - NA</option>
+              <option value="603"> 603 - NA</option>
+              <option value="704"> 704 - EU</option>
+              <option value="707"> 707 - EU</option>
+            </select>
+          </div>
+        </li>
+        <li class="form-line" id="id_23">
+          <label class="form-label-left" id="label_23" for="input_23"> Secondary Locked Frequency </label>
+          <div id="cid_23" class="form-input">
+            <select class="form-dropdown" style="width:150px" id="q8_secondaryLocked" name="q8_secondaryLocked">
+              <option value="">  </option>
+              <option value="234"> 234 - NA</option>
+              <option value="303"> 303 - NA</option>
+              <option value="404"> 404 - EU</option>
+              <option value="520"> 520 - EU</option>
+              <option value="585"> 585 - NA</option>
+              <option value="603"> 603 - NA</option>
+              <option value="704"> 704 - EU</option>
+              <option value="707"> 707 - EU</option>
+            </select>
+          </div>
+        </li>
+      </ul>
+      <ul class="form-section" id="section_26">
+        <li id="cid_26" class="form-input-wide">
+          <div class="form-collapse-table" id="collapse_26"><span class="form-collapse-mid" id="collapse-text_26">Tester Information</span><span class="form-collapse-right form-collapse-right-show">&nbsp;</span>
+          </div>
+        </li>
+        <li class="form-line" id="id_27">
+          <label class="form-label-left" id="label_27" for="input_27">
+            Tester Name<span class="form-required">*</span>
+          </label>
+          <div id="cid_27" class="form-input">
+            <select class="form-dropdown" style="width:150px" id="q9_testername" name="q9_testername">
+              <option value="">  </option>
+              <option value="Adam1_Huang"> Adam1_Huang </option>
+              <option value="Bibby_Cheng"> Bibby_Cheng </option>
+              <option value="Ian_Sun"> Ian_Sun </option>
+              <option value="Jack2_Chiang"> Jack2_Chiang </option>
+              <option value="Karena_Chuang"> Karena_Chuang </option>
+              <option value="Ken5_Huang"> Ken5_Huang </option>
+              <option value="Kevin_Ying"> Kevin_Ying </option>
+              <option value="Leo1_Su"> Leo1_Su </option>
+            </select>
+          </div>
+        </li>
+        <li class="form-line" id="id_47">
+          <label class="form-label-left" id="label_47" for="input_47"> Email Test Report </label>
+          <div id="cid_47" class="form-input">
+            <div class="form-single-column"><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Email_Test_Report" name="q47_emailTest[]" value="I want to receive Test Reports as Email Attachment when Sanity Test finished." checked/>
+                <label for="input_47_0"> I want to receive Test Report via Email after test finished</label></span><span class="clearfix"></span>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <li id="cid_28" class="form-input-wide">
+        <div class="form-pagebreak">
+          <div class="form-pagebreak-back-container form-label-left">
+            <button type="button" class="form-pagebreak-back " id="form-pagebreak-back_28">
+              Back
+            </button>
+          </div>
+          <div class="form-pagebreak-next-container">
+            <button type="button" class="form-pagebreak-next " id="form-pagebreak-next_28">
+              Next
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <ul class="form-section" style="display:none;">
+      <li id="cid_32" class="form-input-wide">
+        <div class="form-header-group">
+          <h2 id="header_32" class="form-header">
+            Sanity Test Cases
+          </h2>
+        </div>
+      </li>
+			<li class="form-line" id="id_45">
+        <label class="form-label-left" id="label_45" for="input_45"> Sanity Test </label>
+        <div id="cid_45" class="form-input">
+          <select class="form-dropdown" style="width:150px" id="run_all_or_not" name="run_all_or_not" onchange="runAllorNot()">
+            <option value="">  </option>
+            <option selected="selected" value="0"> Run selected test cases </option>
+            <option value="1"> Run "ALL" Test Cases </option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line" id="id_30">
+        <label class="form-label-left" id="label_30" for="input_30"> Remote Upgrade/Downgrade </label>
+        <div id="cid_30" class="form-input">
+          <div class="form-single-column"><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_Remote_Upgrade" name="q30_remoteUpgradedowngrade[]" value="Firmware upgrading/downgrading test" />
+              <label for="input_30_0"> Firmware upgrading/downgrading test </label></span><span class="clearfix"></span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" id="id_33">
+        <label class="form-label-left" id="label_33" for="input_33"> Version Checking </label>
+        <div id="cid_33" class="form-input">
+          <div class="form-single-column"><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_SNMP_sysDescr" name="q33_versionChecking33[]" value="sysDescr Checks" />
+              <label for="input_33_0"> sysDescr Checks </label></span><span class="clearfix"></span><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_Ver_Console_Check" name="q33_versionChecking33[]" value="‘ver’ Command Checks" />
+              <label for="input_33_1"> ‘ver’ Command Checks </label></span><span class="clearfix"></span><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_Ver_Web_Check" name="q33_versionChecking33[]" value="Webpage" />
+              <label for="input_33_2"> Webpage </label></span><span class="clearfix"></span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" id="id_34">
+        <label class="form-label-left" id="label_34" for="input_34"> Reboot/Reset to Default Test </label>
+        <div id="cid_34" class="form-input">
+          <div class="form-single-column"><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_Reboot_Web_Check" name="q34_reboot[]" value="GUI Reboot button" />
+              <label for="input_34_0"> GUI Reboot button </label></span><span class="clearfix"></span><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_Power_Lose_DUT" name="q34_reboot[]" value="Power interruption" />
+              <label for="input_34_1"> Power interruption </label></span><span class="clearfix"></span><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_Default_Web_Check" name="q34_reboot[]" value="GUI Reset to Default" />
+              <label for="input_34_2"> GUI Reset to Default </label></span><span class="clearfix"></span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" id="id_35">
+        <label class="form-label-left" id="label_35" for="input_35"> CM/MTA Provisioning </label>
+        <div id="cid_35" class="form-input">
+          <div class="form-single-column"><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_BPI_Test" name="q35_cm35[]" value="BPI/BPI+ enabled and disabled" />
+              <label for="input_35_0"> BPI/BPI+ enabled and disabled </label></span><span class="clearfix"></span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" id="id_36">
+        <label class="form-label-left" id="label_36" for="input_36"> H/W Interfaces check </label>
+        <div id="cid_36" class="form-input">
+          <div class="form-single-column"><span class="form-checkbox-item" style="clear:left;">
+            <input type="checkbox" class="form-checkbox" id="Switch_RF_Lock_MIB" name="q36_hwInterfaces[]" value="Coax. Cable - Frequency Locking check" />
+              <label for="input_36_0"> Coax. Cable - Frequency Locking check </label></span><span class="clearfix"></span><span class="form-checkbox-item" style="clear:left;">
+              <input type="checkbox" class="form-checkbox" id="Switch_Wireless_Test" name="q36_hwInterfaces[]" value="802.11 (Wireless)" />
+              <label for="input_36_1"> 802.11 (Wireless) </label></span><span class="clearfix"></span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" id="id_37">
+        <label class="form-label-left" id="label_37" for="input_37"> SNMP Test </label>
+        <div id="cid_37" class="form-input">
+          <div class="form-single-column"><span class="form-checkbox-item" style="clear:left;">
+            <input type="checkbox" class="form-checkbox" id="Switch_SNMP_Agent_CM" name="q37_snmpTest[]" value="CM SNMP Agent" />
+              <label for="input_37_0"> CM SNMP Agent </label></span><span class="clearfix"></span><span class="form-checkbox-item" style="clear:left;">
+              <input type="checkbox" class="form-checkbox" id="Switch_SNMP_Agent_EMTA" name="q37_snmpTest[]" value="CM SNMP Agent" />
+              <label for="input_37_1"> CM SNMP Agent - EMTA </label></span><span class="clearfix"></span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" id="id_38">
+        <label class="form-label-left" id="label_38" for="input_38"> Surf GUI </label>
+        <div id="cid_38" class="form-input">
+          <div class="form-multiple-column"><span class="form-checkbox-item"><input type="checkbox" class="form-checkbox" id="Switch_Web_Surf_GUI" name="q38_surfGui[]" value="We can surf DUT's configuration web page via LAN / WLAN port, even if DUT is disconnected from the RF cable." />
+              <label for="input_38_0"> We can surf DUT's configuration web page via LAN / WLAN port, even if DUT is disconnected from the RF cable. </label></span><span class="clearfix"></span><span class="form-checkbox-item"><input type="checkbox" class="form-checkbox" id="Switch_SortSite" name="q38_surfGui[]" value="SortSite" />
+              <label for="input_38_1"> SortSite </label></span><span class="clearfix"></span>
+          </div>
+        </div>
+      </li>  
+      <li class="form-line" id="id_46">
+        <label class="form-label-left" id="label_46" for="input_46"> Gateway Function Test </label>
+        <div id="cid_46" class="form-input">
+          <select class="form-dropdown" style="width:150px" id="Switch_Router_Function" name="q46_gatewayFunction" onchange="runAllGWorNot()">
+            <option value="0" selected> Run selected test cases </option>
+            <option value="1"> Run "ALL" Gateway Functoin Test </option>
+          </select>
+        </div>
+      </li>
+			<li class="form-line" id="id_39">
+        <label class="form-label-left" id="label_39" for="input_39"> </label>
+        <div id="cid_39" class="form-input">
+          <div class="form-single-column"><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_DHCP_on_LAN" name="q39_gatewayFunction[]" value="DHCP on LAN" />
+              <label for="input_39_0"> DHCP on LAN </label></span><span class="clearfix"></span><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_DMZ" name="q39_gatewayFunction[]" value="DMZ" />
+              <label for="input_39_1"> DMZ </label></span><span class="clearfix"></span><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_MAC_Filtering" name="q39_gatewayFunction[]" value="MAC_Filtering" />
+              <label for="input_39_2"> MAC Filtering </label></span><span class="clearfix"></span><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_IP_Filtering" name="q39_gatewayFunction[]" value="IP_Filtering" />
+              <label for="input_39_3"> IP Filtering </label></span><span class="clearfix"></span><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_Port_Filtering" name="q39_gatewayFunction[]" value="Port_Filtering (GUI pre-defined/User-defined rule)" />
+              <label for="input_39_4"> Port Filtering (GUI pre-defined/User-defined rule) </label></span><span class="clearfix"></span><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_Port_Forwarding" name="q39_gatewayFunction[]" value="Port Forwarding (GUI pre-defined/User-defined rule)" />
+              <label for="input_39_5"> Port Forwarding (GUI pre-defined/User-defined rule) </label></span><span class="clearfix"></span><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_Port_Triggering" name="q39_gatewayFunction[]" value="Port_Triggering" />
+              <label for="input_39_6"> Port Triggering </label></span><span class="clearfix"></span><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_NAT" name="q39_gatewayFunction[]" value="NAT" />
+              <label for="input_39_7"> NAT </label></span><span class="clearfix"></span><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_Web_Filtering" name="q39_gatewayFunction[]" value="Web Filtering" />
+              <label for="input_39_8"> Web Filtering </label></span><span class="clearfix"></span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" id="id_40">
+        <label class="form-label-left" id="label_40" for="input_40"> Wireless Test </label>
+        <div id="cid_40" class="form-input">
+          <div class="form-single-column"><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_Primary_SSID" name="q40_wirelessTest[]" value="Primary SSID" />
+              <label for="input_40_0"> Primary SSID </label></span><span class="clearfix"></span><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_WPS_PIN" name="q40_wirelessTest[]" value="WPS - PIN" />
+              <label for="input_40_1"> WPS - PIN </label></span><span class="clearfix"></span><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_WPS_PBC" name="q40_wirelessTest[]" value="WPS - PBC" />
+              <label for="input_40_2"> WPS - PBC </label></span><span class="clearfix"></span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" id="id_41">
+        <label class="form-label-left" id="label_41" for="input_41"> CDRouter </label>
+        <div id="cid_41" class="form-input">
+          <div class="form-single-column"><span class="form-checkbox-item" style="clear:left;"><input type="checkbox" class="form-checkbox" id="Switch_CDRouter_Quick" name="q41_cdrouter41[]" value="CDRouter Test" />
+              <label for="input_41_0"> CDRouter Test </label></span><span class="clearfix"></span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" id="id_44">
+        <div id="cid_44" class="form-input-wide">
+          <div style="margin-left:186px" class="form-buttons-wrapper">
+            <button id="input_44" type="submit" class="form-submit-button" onclick="checkUserInput()">
+              Submit
+            </button>
+          </div>
+        </div>
+      </li>
+      <li style="display:none">
+        Should be Empty:
+        <input type="text" name="website" value="" />
+      </li>
+    </ul>
+  </div>
+  <input type="hidden" id="simple_spc" name="simple_spc" value="32135170023842" />
+  <script type="text/javascript">
+  document.getElementById("si" + "mple" + "_spc").value = "32135170023842-32135170023842";
+  </script>
+</form></body>
+</html>

@@ -1,0 +1,19 @@
+2013/8/19	1. add backdoor variable	
+		2. add TWC into the model list
+
+
+2013/8/14	1. modify nova.css
+		2. replace 'TI ' as 'Inter' 
+		3. Add Email Test Report checkbox
+ 
+2013/8/7		1. add Switch_SortSite
+		2. modify the wrong file name to 'User_Defined.txt'
+		3. Change html file name to "ATP_Sanity_Test.html"
+		4. add: when Switch_Router_Function = 1, disable the all GW checked checkbox; otherwise when Switch_Router_Function = 0, enable it.
+
+2013/8/6		1. add test cases list checkboxs
+		2. add two main switch dropbox : select All / select All GW
+		3. remove input validate required
+		4. add 'next' and' back' button
+
+2013/8/5 		1. creat basic layout
